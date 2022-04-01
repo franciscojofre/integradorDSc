@@ -11,7 +11,7 @@ const heroeController = {
             if (req.params.id == info[i].id) {
                 respuestaDetalle = 'Hola, mi nombre es ' + info[i].nombre + ' y soy ' + info[i].profesion;
             }
-            if (req.params.id > info[i].length) {
+            if (req.params.id > info.length) {
                 respuestaDetalle = 'No encontramos al científico indicado. Por favor, elija otro id.'
             }
         }
@@ -20,7 +20,7 @@ const heroeController = {
     masDetalle: function (req, res) {
         let respuestaMasDetalle = '';
         for (let i = 0; i < info.length; i++) {
-            if (req.params.id > info[i].length) {
+            if (req.params.id > info.length) {
                 respuestaMasDetalle = 'No encontramos al científico indicado para mostrar su biografía.'
             }
             if (req.params.id == info[i].id && req.params.ok == null) {
